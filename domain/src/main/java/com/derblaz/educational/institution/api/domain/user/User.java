@@ -1,6 +1,9 @@
 package com.derblaz.educational.institution.api.domain.user;
 
 import com.derblaz.educational.institution.api.domain.AggregateRoot;
+import com.derblaz.educational.institution.api.domain.exceptions.NotificationException;
+import com.derblaz.educational.institution.api.domain.validation.ValidationHandler;
+import com.derblaz.educational.institution.api.domain.validation.handler.Notification;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -35,6 +38,8 @@ public class User extends AggregateRoot<UserID> {
         this.createdAt = Objects.requireNonNull(createdAt);
         this.updatedAt = Objects.requireNonNull(updatedAt);
         this.deletedAt = deletedAt;
+
+        this.selfValidate();
     }
 
     public static User newUser(
@@ -55,6 +60,20 @@ public class User extends AggregateRoot<UserID> {
                 null
 
         );
+    }
+
+    private void selfValidate() {
+        final var notification = Notification.create();
+        this.validate(notification);
+
+        if(notification.hasError()){
+            throw new NotificationException("", notification);
+        }
+
+    }
+
+    private void validate(ValidationHandler notification) {
+        new UserValidator(this, notification).validate();
     }
 
     public String getName() {
