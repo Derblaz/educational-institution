@@ -11,4 +11,9 @@ public interface ValidationHandler {
     }
     List<Error> getErrors();
 
+    <T> T validate(Validation<T> anValidation);
+
+    interface  Validation<T>{
+        T validate();
+    }
 }

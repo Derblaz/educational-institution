@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado atualização de usuario">
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/Gateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/pagination/Pagination.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/pagination/SearchQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/UserGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado gateway de comunicacao">
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/UseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/create/CreateUserCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/create/CreateUserOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/create/CreateUserUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/create/CreateUserUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/application/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/ValidationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/handler/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/handler/Notification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +83,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -119,6 +123,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.derblaz.educational.institution.api.application.user.create" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api\domain\src\main\java\com\derblaz\educational\institution\api\domain" />
     </key>
@@ -129,14 +136,39 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.derblaz.educational.institution.api.application.user.create" />
       <recent name="com.derblaz.educational.institution.api.domain.user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.derblaz.educational.institution.api.application" />
       <recent name="com.derblaz.educational.institution.api.domain.user" />
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserTest">
+  <component name="RunManager" selected="Gradle.CreateUserUseCaseTest">
+    <configuration name="CreateUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.derblaz.educational.institution.api.application.user.create.CreateUserUseCaseTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,29 +183,6 @@
             <option value=":domain:test" />
             <option value="--tests" />
             <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -229,23 +238,25 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="educational-institution-api:domain [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/domain" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -260,11 +271,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CreateUserUseCaseTest" />
+        <item itemvalue="Gradle.UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors" />
         <item itemvalue="Gradle.UserTest" />
         <item itemvalue="Gradle.UserTest.givenAnActiveUser_whenCallsUpdateUserWithActivationFalse_thenReturnInactiveUser" />
         <item itemvalue="Gradle.UserTest.givenAnInvalidParam_whenCallsUpdateUser_shouldReturnAnError" />
-        <item itemvalue="Gradle.UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser" />
-        <item itemvalue="Gradle.educational-institution-api:domain [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +288,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
       <workItem from="1699702693145" duration="29716000" />
-      <workItem from="1699795650910" duration="400000" />
+      <workItem from="1699795650910" duration="8338000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -321,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699795408855</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: Adicionado gateway de comunicacao">
+      <created>1699797940588</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699797940588</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +364,7 @@
     <MESSAGE value="feat: Adicionado validacao do usuario" />
     <MESSAGE value="feat: Adicionado comportamento de ativar e desativar usuario" />
     <MESSAGE value="feat: Adicionado atualização de usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado atualização de usuario" />
+    <MESSAGE value="feat: Adicionado gateway de comunicacao" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado gateway de comunicacao" />
   </component>
 </project>

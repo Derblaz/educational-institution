@@ -1,5 +1,6 @@
 package com.derblaz.educational.institution.api.domain.validation.handler;
 
+import com.derblaz.educational.institution.api.domain.exceptions.DomainException;
 import com.derblaz.educational.institution.api.domain.validation.Error;
 import com.derblaz.educational.institution.api.domain.validation.ValidationHandler;
 
@@ -41,6 +42,18 @@ public class Notification implements ValidationHandler {
     @Override
     public List<Error> getErrors() {
         return this.errors;
+    }
+
+    @Override
+    public <T> T validate(final Validation<T> anValidation) {
+        try {
+            return anValidation.validate();
+        } catch (DomainException ex){
+            this.errors.addAll(ex.getErrors());
+        } catch (Throwable ex){
+            this.errors.add(new Error(ex.getMessage()));
+        }
+        return null;
     }
 
 
