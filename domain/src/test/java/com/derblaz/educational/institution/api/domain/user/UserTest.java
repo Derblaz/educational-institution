@@ -91,4 +91,75 @@ public class UserTest {
         assertEquals(expectedErrorMessageOne, actualException.getErrors().get(0).withMessage());
         assertEquals(expectedErrorMessageTwo, actualException.getErrors().get(1).withMessage());
     }
+
+
+    @Test
+    public void givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser() throws InterruptedException {
+        final var expectedName = "User";
+        final var expectedProfile = Profile.ADMIN;
+        final String expectedUsername = "username" ;
+        final var expectedPassword = "password";
+
+        final var actualUser = User.newUser(
+                expectedName,
+                expectedProfile,
+                expectedUsername,
+                expectedPassword
+        );
+        final var createAtBeforeDeactivate = actualUser.getCreatedAt();
+        final var updateAtBeforeDeactivate = actualUser.getUpdatedAt();
+
+        assertTrue(actualUser.isActive());
+        assertNull(actualUser.getDeletedAt());
+
+
+        Thread.sleep(10);
+        actualUser.deactivate();
+
+
+        assertEquals(expectedName, actualUser.getName());
+        assertEquals(expectedProfile, actualUser.getProfile());
+        assertEquals(expectedUsername, actualUser.getUsername());
+        assertEquals(expectedPassword, actualUser.getPassword());
+        assertFalse(actualUser.isActive());
+        assertEquals(createAtBeforeDeactivate, actualUser.getCreatedAt());
+        assertTrue(updateAtBeforeDeactivate.isBefore(actualUser.getUpdatedAt()));
+        assertNotNull(actualUser.getDeletedAt());
+    }
+
+    @Test
+    public void givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser() throws InterruptedException {
+        final var expectedName = "User";
+        final var expectedProfile = Profile.ADMIN;
+        final String expectedUsername = "username" ;
+        final var expectedPassword = "password";
+
+        final var actualUser = User.newUser(
+                expectedName,
+                expectedProfile,
+                expectedUsername,
+                expectedPassword
+        ).deactivate();
+
+        final var createAtBeforeDeactivate = actualUser.getCreatedAt();
+        final var updateAtBeforeDeactivate = actualUser.getUpdatedAt();
+
+        assertFalse(actualUser.isActive());
+        assertNotNull(actualUser.getDeletedAt());
+
+
+        Thread.sleep(10);
+        actualUser.activate();
+
+
+        assertEquals(expectedName, actualUser.getName());
+        assertEquals(expectedProfile, actualUser.getProfile());
+        assertEquals(expectedUsername, actualUser.getUsername());
+        assertEquals(expectedPassword, actualUser.getPassword());
+        assertTrue(actualUser.isActive());
+        assertEquals(createAtBeforeDeactivate, actualUser.getCreatedAt());
+        assertTrue(updateAtBeforeDeactivate.isBefore(actualUser.getUpdatedAt()));
+        assertNull(actualUser.getDeletedAt());
+    }
+
 }

@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado validacao do usuario">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/exceptions/DomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/exceptions/NoStacktraceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/exceptions/NotificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/UserValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/Error.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/ValidationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/handler/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/domain/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/test/java/com/derblaz/educational/institution/api/domain/user/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/derblaz/educational/institution/api/domain/user/UserTest.java" afterDir="false" />
     </list>
@@ -32,6 +22,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -105,20 +98,7 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.derblaz.educational.institution.api.infrastructure.Main" />
-      <module name="educational-institution-api.infrastructure.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.derblaz.educational.institution.api.infrastructure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser">
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -142,7 +122,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.givenAValidParam_whenCallsNewUser_thenInstantiateAnActiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -155,7 +135,30 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidParam_whenCallsNewUser_thenInstantiateAnActiveUser&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser" />
+        <item itemvalue="Gradle.UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser" />
         <item itemvalue="Gradle.UserTest" />
         <item itemvalue="Gradle.UserTest.givenAnInvalidParam_whenCallsNewUser_shouldReceiveError" />
         <item itemvalue="Gradle.UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors" />
-        <item itemvalue="Gradle.UserTest.givenAValidParam_whenCallsNewUser_thenInstantiateAnActiveUser" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +241,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
-      <workItem from="1699702693145" duration="17240000" />
+      <workItem from="1699702693145" duration="19589000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -261,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699734140685</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Adicionado validacao do usuario">
+      <created>1699738774737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699738774737</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

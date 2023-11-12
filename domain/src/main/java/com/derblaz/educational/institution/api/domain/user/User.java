@@ -76,6 +76,24 @@ public class User extends AggregateRoot<UserID> {
         new UserValidator(this, notification).validate();
     }
 
+    public User activate(){
+        if(isActive()) return this;
+
+        this.deletedAt = null;
+        this.active = true;
+        this.updatedAt = Instant.now();
+        return this;
+    }
+
+    public User deactivate(){
+        if(!isActive()) return this;
+
+        this.deletedAt = Instant.now();
+        this.active = false;
+        this.updatedAt = Instant.now();
+        return this;
+    }
+
     public String getName() {
         return name;
     }
