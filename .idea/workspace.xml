@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado validacao do usuario">
+    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado atualização de usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/Error.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/test/java/com/derblaz/educational/institution/api/domain/user/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/derblaz/educational/institution/api/domain/user/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +26,47 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/domain">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/infrastructure">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="domain" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="domain" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="domain" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="infrastructure" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="infrastructure" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -98,7 +134,7 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser">
+  <component name="RunManager" selected="Gradle.UserTest">
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -122,7 +158,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +171,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +181,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserTest.givenAnActiveUser_whenCallsUpdateUserWithActivationFalse_thenReturnInactiveUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +194,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAnActiveUser_whenCallsUpdateUserWithActivationFalse_thenReturnInactiveUser&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,7 +204,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.givenAnInvalidParam_whenCallsNewUser_shouldReceiveError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserTest.givenAnInvalidParam_whenCallsUpdateUser_shouldReturnAnError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -181,7 +217,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAnInvalidParam_whenCallsNewUser_shouldReceiveError&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenAnInvalidParam_whenCallsUpdateUser_shouldReturnAnError&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -191,25 +227,23 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="educational-institution-api:domain [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/domain" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.domain.user.UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors&quot;" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -225,11 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserTest.givenAValidInactiveUser_whenCallsActivate_shouldReturnActiveUser" />
-        <item itemvalue="Gradle.UserTest.givenAValidActiveUser_whenCallsDeactivate_shouldReturnInactiveUser" />
         <item itemvalue="Gradle.UserTest" />
-        <item itemvalue="Gradle.UserTest.givenAnInvalidParam_whenCallsNewUser_shouldReceiveError" />
-        <item itemvalue="Gradle.UserTest.givenMoreThanOneInvalidParam_whenCallsNewUser_shouldReceiveErrors" />
+        <item itemvalue="Gradle.UserTest.givenAnActiveUser_whenCallsUpdateUserWithActivationFalse_thenReturnInactiveUser" />
+        <item itemvalue="Gradle.UserTest.givenAnInvalidParam_whenCallsUpdateUser_shouldReturnAnError" />
+        <item itemvalue="Gradle.UserTest.givenAValidParam_whenCallsUpdateUser_shouldReturnUpdatedUser" />
+        <item itemvalue="Gradle.educational-institution-api:domain [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +275,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
-      <workItem from="1699702693145" duration="19589000" />
+      <workItem from="1699702693145" duration="29112000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -271,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699738774737</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Adicionado comportamento de ativar e desativar usuario">
+      <created>1699748035688</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699748035688</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,20 +335,8 @@
     <MESSAGE value="test: Criado testes de Usuario" />
     <MESSAGE value="feat: Criado entidade de usuario" />
     <MESSAGE value="feat: Adicionado validacao do usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado validacao do usuario" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/src/test/java/com/derblaz/educational/institution/api/domain/user/UserTest.java</url>
-          <line>60</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: Adicionado comportamento de ativar e desativar usuario" />
+    <MESSAGE value="feat: Adicionado atualização de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado atualização de usuario" />
   </component>
 </project>

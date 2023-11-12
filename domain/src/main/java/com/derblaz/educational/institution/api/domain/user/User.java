@@ -94,6 +94,26 @@ public class User extends AggregateRoot<UserID> {
         return this;
     }
 
+    public User update(
+            final String name,
+            final Profile profile,
+            final String username,
+            final String password,
+            final boolean isActive
+    ){
+        this.name = name;
+        this.profile = profile;
+        this.username = username;
+        this.password = password;
+        if (isActive) {
+            activate();
+        } else {
+            deactivate();
+        }
+        selfValidate();
+        return this;
+    }
+
     public String getName() {
         return name;
     }
