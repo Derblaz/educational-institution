@@ -1,6 +1,16 @@
+buildscript {
+    dependencies {
+        classpath 'org.flywaydb:flyway-mysql:9.11.0'
+    }
+}
+
 plugins {
     id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.1.5'
+    id "org.flywaydb.flyway" version "9.11.0"
 }
+apply plugin: 'io.spring.dependency-management'
 
 group 'com.derblaz.educational.institution.api.infrastructure'
 version '1.0-SNAPSHOT'
@@ -9,11 +19,28 @@ repositories {
     mavenCentral()
 }
 
+bootJar {
+    archiveName 'application.jar'
+    destinationDirectory.set(file("${rootProject.buildDir}/libs"))
+}
+
 dependencies {
     implementation(project(':application'))
     implementation(project(':domain'))
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation('com.mysql:mysql-connector-j:8.2.0')
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+flyway {
+    url = System.getenv('FLYWAY_DB') ?: 'jdbc:mysql://localhost:3306/educational_institution'
+    user = System.getenv('FLYWAY_USER') ?: 'root'
+    password = System.getenv('FLYWAY_PASS') ?: '123456'
 }
 
 test {

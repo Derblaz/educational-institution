@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  mysql:
+    container_name: educational_institution_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: educational_institution
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - 3306:3306
+    networks:
+      - educational_institution_services
+
+networks:
+  educational_institution_services:

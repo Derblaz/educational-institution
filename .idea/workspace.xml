@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado caso de uso, obter usuario">
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/UnitUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/delete/DeleteUserUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/UserListOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/delete/DeleteUserUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCaseTest.java" afterDir="false" />
+    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado caso de uso, deletar usuarios">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/configuration/WebServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/update/UpdateUserUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/update/UpdateUserUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +46,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="domain" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="domain" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="domain" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
                 <item name="infrastructure" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -71,6 +53,13 @@
                 <item name="educational-institution-api" type="f1a62948:ProjectNode" />
                 <item name="infrastructure" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
+                <item name="infrastructure" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="flyway" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -84,9 +73,9 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,31 +96,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projetos/cabodeh/educational-institution/educational-institution-api/domain/src/main/java/com/derblaz/educational/institution/api/domain&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37586206&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "C:/Projetos/cabodeh/educational-institution/educational-institution-api/infrastructure",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.37586206"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.derblaz.educational.institution.api.infrastructure.configuration" />
       <recent name="com.derblaz.educational.institution.api.application.user.retrieve.get" />
       <recent name="com.derblaz.educational.institution.api.application.user.update" />
       <recent name="com.derblaz.educational.institution.api.application.user.create" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api\infrastructure" />
       <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api\domain\src\main\java\com\derblaz\educational\institution\api\domain" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.derblaz.educational.institution.api.domain" />
@@ -150,30 +154,7 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException">
-    <configuration name="DeleteUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.delete.DeleteUserUseCaseTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.educational-institution-api:infrastructure [flywayInfo]">
     <configuration name="DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,74 +178,81 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GetUserByIdUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="educational-institution-api:infrastructure [flywayClean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/infrastructure" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.retrieve.get.GetUserByIdUseCaseTest&quot;" />
+            <option value="flywayClean" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ListUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="educational-institution-api:infrastructure [flywayInfo]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/infrastructure" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.retrieve.list.ListUserUseCaseTest&quot;" />
+            <option value="flywayInfo" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="educational-institution-api:infrastructure [flywayMigrate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/infrastructure" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.retrieve.list.ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers&quot;" />
+            <option value="flywayMigrate" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="educational-institution-api.infrastructure.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.derblaz.educational.institution.api.infrastructure.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.derblaz.educational.institution.api.infrastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="aws.lambda" factoryName="Remote">
       <option name="credentialProviderId" />
@@ -276,11 +264,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayInfo]" />
+        <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayClean]" />
+        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayMigrate]" />
         <item itemvalue="Gradle.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" />
-        <item itemvalue="Gradle.DeleteUserUseCaseTest" />
-        <item itemvalue="Gradle.ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers" />
-        <item itemvalue="Gradle.ListUserUseCaseTest" />
-        <item itemvalue="Gradle.GetUserByIdUseCaseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +281,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
       <workItem from="1699702693145" duration="29716000" />
-      <workItem from="1699795650910" duration="28503000" />
+      <workItem from="1699795650910" duration="37293000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -365,7 +353,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699832404507</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: Adicionado caso de uso, obter usuarios paginados">
+      <created>1699879215947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699879215947</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: Adicionado caso de uso, deletar usuarios">
+      <created>1699879235514</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699879235514</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +396,9 @@
     <MESSAGE value="feat: Adicionado caso de uso, criar usuario" />
     <MESSAGE value="feat: Adicionado caso de uso, atualizar usuario" />
     <MESSAGE value="feat: Adicionado caso de uso, obter usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado caso de uso, obter usuario" />
+    <MESSAGE value="feat: Adicionado caso de uso, obter usuarios paginados" />
+    <MESSAGE value="feat: Adicionado caso de uso, deletar usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado caso de uso, deletar usuarios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
