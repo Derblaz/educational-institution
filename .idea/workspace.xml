@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado caso de uso, atualizar usuario">
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/get/GetUserByIdUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/get/UserOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/retrieve/get/GetUserByIdUseCaseTest.java" afterDir="false" />
+    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado caso de uso, obter usuario">
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/UnitUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/delete/DeleteUserUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/UserListOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/delete/DeleteUserUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/update/UpdateUserUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/update/UpdateUserUseCaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +83,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Record" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -133,10 +137,11 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.derblaz.educational.institution.api.application.user.delete" />
+      <recent name="com.derblaz.educational.institution.api.application.user.retrieve.list" />
       <recent name="com.derblaz.educational.institution.api.application.user.retrieve.get" />
       <recent name="com.derblaz.educational.institution.api.application.user.update" />
       <recent name="com.derblaz.educational.institution.api.application.user.create" />
-      <recent name="com.derblaz.educational.institution.api.domain.user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.derblaz.educational.institution.api.domain.exceptions" />
@@ -145,8 +150,8 @@
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GetUserByIdUseCaseTest">
-    <configuration name="CreateUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException">
+    <configuration name="DeleteUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,7 +164,30 @@
           <list>
             <option value=":application:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.create.CreateUserUseCaseTest&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.application.user.delete.DeleteUserUseCaseTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.derblaz.educational.institution.api.application.user.delete.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,7 +220,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UpdateUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ListUserUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -205,7 +233,7 @@
           <list>
             <option value=":application:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.update.UpdateUserUseCaseTest&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.application.user.retrieve.list.ListUserUseCaseTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,7 +243,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UpdateUserUseCaseTest.givenACommandWithInvalidId_whenCallsUpdate_thenReturnNotFoundException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -228,30 +256,7 @@
           <list>
             <option value=":application:test" />
             <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.update.UpdateUserUseCaseTest.givenACommandWithInvalidId_whenCallsUpdate_thenReturnNotFoundException&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UpdateUserUseCaseTest.givenAValidCommand_whenGatewayThrowsRadomException_thenReturnAException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.update.UpdateUserUseCaseTest.givenAValidCommand_whenGatewayThrowsRadomException_thenReturnAException&quot;" />
+            <option value="&quot;com.derblaz.educational.institution.api.application.user.retrieve.list.ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -271,11 +276,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" />
+        <item itemvalue="Gradle.DeleteUserUseCaseTest" />
+        <item itemvalue="Gradle.ListUserUseCaseTest.givenAValidQuery_whenCallsListUser_shouldReturnUsers" />
+        <item itemvalue="Gradle.ListUserUseCaseTest" />
         <item itemvalue="Gradle.GetUserByIdUseCaseTest" />
-        <item itemvalue="Gradle.UpdateUserUseCaseTest.givenACommandWithInvalidId_whenCallsUpdate_thenReturnNotFoundException" />
-        <item itemvalue="Gradle.UpdateUserUseCaseTest" />
-        <item itemvalue="Gradle.UpdateUserUseCaseTest.givenAValidCommand_whenGatewayThrowsRadomException_thenReturnAException" />
-        <item itemvalue="Gradle.CreateUserUseCaseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +293,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
       <workItem from="1699702693145" duration="29716000" />
-      <workItem from="1699795650910" duration="21388000" />
+      <workItem from="1699795650910" duration="28503000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -353,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699819192321</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: Adicionado caso de uso, obter usuario">
+      <created>1699832404507</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699832404507</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +393,27 @@
     <MESSAGE value="feat: Adicionado gateway de comunicacao" />
     <MESSAGE value="feat: Adicionado caso de uso, criar usuario" />
     <MESSAGE value="feat: Adicionado caso de uso, atualizar usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado caso de uso, atualizar usuario" />
+    <MESSAGE value="feat: Adicionado caso de uso, obter usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado caso de uso, obter usuario" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCase.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCaseTest.java</url>
+          <line>37</line>
+          <properties class="com.derblaz.educational.institution.api.application.user.retrieve.list.ListUserUseCaseTest" method="givenAValidQuery_whenCallsListUser_shouldReturnUsers">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
