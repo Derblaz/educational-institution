@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado persistencia do usuario">
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserJpaEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserMySQLGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/utils/SpecificationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/db/migration/V202311132234__create_user_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/api/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/api/UserAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/configuration/usecases/UserUseCaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/model/UpdateUserRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/Gateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -49,20 +46,13 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="infrastructure" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="infrastructure" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="educational-institution-api" type="f1a62948:ProjectNode" />
-                <item name="infrastructure" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="flyway" type="c8890929:TasksNode$1" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -75,9 +65,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Record" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -122,7 +112,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.37586206"
+    "project.structure.side.proportion": "0.37586206",
+    "spring.configuration.checksum": "334b5b0b28deccba16417953bfb6f75b"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -191,10 +182,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="educational-institution-api:infrastructure [flywayClean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="educational-institution-api [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/infrastructure" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -202,7 +193,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="flywayClean" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -254,6 +245,15 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="educational-institution-api.infrastructure.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.derblaz.educational.institution.api.infrastructure.Main" />
@@ -267,21 +267,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Remote">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="functionName" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="Gradle.educational-institution-api [test]" />
         <item itemvalue="Gradle.educational-institution-api [dependencies]" />
         <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayMigrate]" />
         <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayInfo]" />
-        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayClean]" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +286,8 @@
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
       <workItem from="1699702693145" duration="29716000" />
-      <workItem from="1699795650910" duration="47407000" />
+      <workItem from="1699795650910" duration="47831000" />
+      <workItem from="1699963013889" duration="9796000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -387,7 +380,35 @@
       <option name="project" value="LOCAL" />
       <updated>1699904924880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: Adicionado persistencia do usuario">
+      <created>1699962572519</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699962572519</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: Adicionado persistencia do usuario">
+      <created>1699964668068</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699964668068</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: Adicionado persistencia do usuario">
+      <created>1699964709840</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699964709840</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Adicionado persistencia do usuario">
+      <created>1699964928619</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699964928619</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,9 +447,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/application/src/main/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCase.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/handler/Notification.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/validation/handler/Notification.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/controllers/UserController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/application/src/test/java/com/derblaz/educational/institution/api/application/user/retrieve/list/ListUserUseCaseTest.java</url>
