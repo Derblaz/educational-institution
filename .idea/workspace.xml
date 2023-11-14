@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado caso de uso, deletar usuarios">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/configuration/WebServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="beae2086-0ae5-4e20-ac50-0a93ed359b4e" name="Changes" comment="feat: Adicionado persistencia do usuario">
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserMySQLGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/user/persistence/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/utils/SpecificationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/db/migration/V202311132234__create_user_table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/Gateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/derblaz/educational/institution/api/domain/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/derblaz/educational/institution/api/infrastructure/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +85,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MigrationScriptOptions">
+    <option name="ignoreImplicitObjects" value="true" />
+    <option name="ignoreSourceCode" value="false" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -115,6 +125,9 @@
     "project.structure.side.proportion": "0.37586206"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
     "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
       "MySQL"
     ]
@@ -135,6 +148,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api\infrastructure\src\main\resources\db" />
       <recent name="C:\Projetos\cabodeh\educational-institution\educational-institution-api" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -148,32 +162,31 @@
       <recent name="com.derblaz.educational.institution.api.application.user.create" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.derblaz.educational.institution.api.infrastructure.utils" />
       <recent name="com.derblaz.educational.institution.api.domain.exceptions" />
       <recent name="com.derblaz.educational.institution.api.application" />
       <recent name="com.derblaz.educational.institution.api.domain.user" />
       <recent name="com.derblaz.educational.institution.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.educational-institution-api:infrastructure [flywayInfo]">
-    <configuration name="DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="educational-institution-api [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.derblaz.educational.institution.api.application.user.delete.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException&quot;" />
+            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -264,11 +277,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayInfo]" />
         <item itemvalue="Spring Boot.Main" />
-        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayClean]" />
+        <item itemvalue="Gradle.educational-institution-api [dependencies]" />
         <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayMigrate]" />
-        <item itemvalue="Gradle.DeleteUserUseCaseTest.givenAInvalidId_whenCallsDeteleUser_thenReturnException" />
+        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayInfo]" />
+        <item itemvalue="Gradle.educational-institution-api:infrastructure [flywayClean]" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +294,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699702691735</updated>
       <workItem from="1699702693145" duration="29716000" />
-      <workItem from="1699795650910" duration="37293000" />
+      <workItem from="1699795650910" duration="47407000" />
     </task>
     <task id="LOCAL-00001" summary="Criado projeto base.">
       <created>1699704930522</created>
@@ -367,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699879235514</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="build: Configurado Infraestrutura com Spring">
+      <created>1699904924880</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699904924880</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +418,9 @@
     <MESSAGE value="feat: Adicionado caso de uso, obter usuario" />
     <MESSAGE value="feat: Adicionado caso de uso, obter usuarios paginados" />
     <MESSAGE value="feat: Adicionado caso de uso, deletar usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado caso de uso, deletar usuarios" />
+    <MESSAGE value="build: Configurado Infraestrutura com Spring" />
+    <MESSAGE value="feat: Adicionado persistencia do usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado persistencia do usuario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

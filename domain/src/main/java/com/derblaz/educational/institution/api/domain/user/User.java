@@ -62,6 +62,20 @@ public class User extends AggregateRoot<UserID> {
         );
     }
 
+    public static User with(String id, String name, Profile profile, String username, String password, boolean active, Instant createdAt, Instant updatedAt, Instant deletedAt) {
+        return new User(
+                UserID.from(id),
+                name,
+                profile,
+                username,
+                password,
+                active,
+                createdAt,
+                updatedAt,
+                deletedAt
+        );
+    }
+
     private void selfValidate() {
         final var notification = Notification.create();
         this.validate(notification);

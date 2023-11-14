@@ -6,13 +6,13 @@ import com.derblaz.educational.institution.api.domain.pagination.SearchQuery;
 import java.util.Optional;
 
 public interface Gateway<T, ID> {
-    T create(T entity);
+    T create(T anAggregate);
 
     void deleteById(ID anId);
 
     Optional<T> findById(ID anId);
 
-    T update(T entity);
+    T update(T anAggregate);
 
     Pagination<T> findAll(SearchQuery aQuery);
 }
