@@ -6,17 +6,12 @@ import com.derblaz.educational.institution.api.domain.validation.ValidationHandl
 import com.derblaz.educational.institution.api.domain.validation.handler.Notification;
 
 import java.time.Instant;
-import java.util.Objects;
 
-public class User extends AggregateRoot<UserID> {
+public class User extends AggregateRoot<User, UserID> {
     private String name;
     private Profile profile;
     private String username;
     private String password;
-    private boolean active;
-    private Instant createdAt;
-    private Instant updatedAt;
-    private Instant deletedAt;
 
     private User(
             UserID userID,
@@ -29,15 +24,12 @@ public class User extends AggregateRoot<UserID> {
             Instant updatedAt,
             Instant deletedAt
     ) {
-        super(userID);
+        super(userID, active, createdAt, updatedAt, deletedAt);
         this.name = name;
         this.profile = profile;
         this.username = username;
         this.password = password;
-        this.active = active;
-        this.createdAt = Objects.requireNonNull(createdAt);
-        this.updatedAt = Objects.requireNonNull(updatedAt);
-        this.deletedAt = deletedAt;
+
 
         this.selfValidate();
     }
@@ -90,23 +82,6 @@ public class User extends AggregateRoot<UserID> {
         new UserValidator(this, notification).validate();
     }
 
-    public User activate(){
-        if(isActive()) return this;
-
-        this.deletedAt = null;
-        this.active = true;
-        this.updatedAt = Instant.now();
-        return this;
-    }
-
-    public User deactivate(){
-        if(!isActive()) return this;
-
-        this.deletedAt = Instant.now();
-        this.active = false;
-        this.updatedAt = Instant.now();
-        return this;
-    }
 
     public User update(
             final String name,
@@ -144,19 +119,4 @@ public class User extends AggregateRoot<UserID> {
         return password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public Instant getDeletedAt() {
-        return deletedAt;
-    }
 }
