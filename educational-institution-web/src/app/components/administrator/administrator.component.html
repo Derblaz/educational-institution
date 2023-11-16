@@ -1,0 +1,138 @@
+<div class="flex flex-column align-items-center p-5">
+  <div class="w-9">
+    <div class="mb-3 pl-3">
+      <h1>Administrador</h1>
+    </div>
+    <div class="flex flex-column gap-4">
+      <p-panel [header]="isUpdate ? 'Editar aluno' : 'Criar aluno'">
+        <div class="formgrid grid">
+          <div class="field col-12 md:col-6">
+            <label for="name">Nome</label>
+            <input
+              id="name"
+              type="text"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              [(ngModel)]="selectedUser.name"
+            />
+          </div>
+          <div class="field col-12 md:col-6">
+            <label for="profile">Profile</label>
+            <select
+              id="profile"
+              class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary"
+              style="appearance: auto"
+              [(ngModel)]="selectedUser.profile"
+            >
+              <option value="ADMIN">Administrador</option>
+              <option value="COORDINATOR">Coordenador</option>
+              <option value="TEACHER">Professor</option>
+              <option value="STUDENT">Aluno</option>
+            </select>
+          </div>
+          <div class="field col-12 md:col-6">
+            <label for="username">Usuário</label>
+            <input
+              id="username"
+              type="text"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              [(ngModel)]="selectedUser.username"
+            />
+          </div>
+          <div class="field col-12 md:col-6">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              type="password"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              [(ngModel)]="selectedUser.password"
+            />
+          </div>
+          <div class="surface-border border-top-1 opacity-50 mb-2 col-12"></div>
+        </div>
+        <div class="flex justify-content-end">
+          <button
+            pButton
+            label="Cancelar"
+            class="p-element p-ripple w-auto p-button-secondary p-component mr-2"
+            (click)="createUserCancelHandler()"
+          ></button>
+          <button
+            pButton
+            label="Salvar"
+            class="p-element p-ripple w-auto p-button p-component"
+            (click)="createOrUpdateUserHandler()"
+          ></button>
+        </div>
+      </p-panel>
+
+      <p-table
+        #dt
+        [value]="pagination.items"
+        [paginator]="true"
+        [rows]="pagination.perPage"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [rowHover]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[2, 5, 15]"
+        [filterDelay]="500"
+        [lazy]="true"
+        (onLazyLoad)="loadUsers($event)"
+        [globalFilterFields]="['name', 'id']"
+        [totalRecords]="pagination.total"
+        (onPage)="loadUsers($event)"
+      >
+        <ng-template pTemplate="caption">
+          <div
+            class="flex flex-wrap align-items-center justify-content-between"
+          >
+            Lista de alunos
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input
+                class="w-12"
+                pInputText
+                type="text"
+                (input)="dt.filterGlobal($event, 'contains')"
+                placeholder="Global Search"
+                [(ngModel)]="filterValue"
+              />
+            </span>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 25%">Name</th>
+            <th style="width: 25%">Username</th>
+            <th style="width: 25%">Profile</th>
+            <th class="w-2">Ações</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.profile }}</td>
+            <td class="w-2">
+              <button
+                class="p-button p-button-icon-only p-button-secondary p-button-rounded p-button-text"
+                type="button"
+                (click)="editUserHandler(user)"
+              >
+                <span class="pi pi-pencil p-button-icon"></span>
+              </button>
+              <button
+                class="p-button p-button-icon-only p-button-danger p-button-rounded p-button-text"
+                type="button"
+                (click)="deleteUserHandler(user)"
+              >
+                <span class="pi pi-times p-button-icon"></span>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
