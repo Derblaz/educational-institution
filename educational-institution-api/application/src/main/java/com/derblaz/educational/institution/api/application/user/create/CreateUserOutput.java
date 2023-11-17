@@ -7,4 +7,6 @@ public record CreateUserOutput(String id) {
     public static CreateUserOutput from(User user){
         return new CreateUserOutput(user.getId().getValue());
     }
+
+
 }
