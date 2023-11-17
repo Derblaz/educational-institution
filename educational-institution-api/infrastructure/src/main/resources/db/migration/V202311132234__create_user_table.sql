@@ -1,4 +1,4 @@
-create table user_profile
+create table if not exists user_profile
 (
     id         varchar(36)                                         not null
         primary key,
@@ -12,3 +12,4 @@ create table user_profile
     updated_at datetime(6)                                         not null,
     deleted_at datetime(6)                                         null
 );
+

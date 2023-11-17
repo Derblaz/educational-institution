@@ -58,7 +58,7 @@ public class Discipline extends AggregateRoot<Discipline, DisciplineID> {
     }
 
     public static Discipline with(
-            final DisciplineID disciplineID,
+            final String id,
             final String name,
             final double credits,
             final String description,
@@ -70,7 +70,7 @@ public class Discipline extends AggregateRoot<Discipline, DisciplineID> {
             final Instant deletedAt
     ) {
         return new Discipline(
-                disciplineID,
+                DisciplineID.from(id),
                 name,
                 credits,
                 description,

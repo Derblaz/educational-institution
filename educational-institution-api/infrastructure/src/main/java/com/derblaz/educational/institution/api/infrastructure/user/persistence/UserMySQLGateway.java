@@ -42,7 +42,7 @@ public class UserMySQLGateway implements UserGateway {
     public Optional<User> findById(UserID anId) {
         return this.userRepository
                 .findById(anId.getValue())
-                .map(UserJpaEntity::toAggrgate);
+                .map(UserJpaEntity::toAggregate);
     }
 
     @Override
@@ -71,11 +71,11 @@ public class UserMySQLGateway implements UserGateway {
                 pageResult.getNumber(),
                 pageResult.getSize(),
                 pageResult.getTotalElements(),
-                pageResult.map(UserJpaEntity::toAggrgate).toList()
+                pageResult.map(UserJpaEntity::toAggregate).toList()
         );
     }
 
     private User save(User anUser){
-        return userRepository.save(UserJpaEntity.from(anUser)).toAggrgate();
+        return userRepository.save(UserJpaEntity.from(anUser)).toAggregate();
     }
 }

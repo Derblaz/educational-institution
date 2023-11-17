@@ -6,7 +6,7 @@ import com.derblaz.educational.institution.api.domain.discipline.DisciplineID;
 import java.time.Instant;
 
 public record GetDisciplineOutput(
-        DisciplineID disciplineID,
+        DisciplineID id,
         String name,
         double credits,
         String description,

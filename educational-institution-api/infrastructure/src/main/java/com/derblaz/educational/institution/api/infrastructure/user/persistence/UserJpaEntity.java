@@ -68,7 +68,7 @@ public class UserJpaEntity {
         );
     }
 
-    public User toAggrgate(){
+    public User toAggregate(){
         return User.with(
                 this.id,
                 this.name,

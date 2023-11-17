@@ -9,6 +9,9 @@ public final class SpecificationUtils {
         return ((root, query, cb) -> cb.like(cb.upper(root.get(prop)), like(term.toUpperCase())));
     }
 
+    public static <T> Specification<T> active() {
+        return (root, query, cb) -> cb.isTrue(root.get("active"));
+    }
     private static String like (final String term){
         return "%" + term + "%";
     }
