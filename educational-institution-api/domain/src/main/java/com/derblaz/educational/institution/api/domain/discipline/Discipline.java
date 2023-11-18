@@ -110,7 +110,7 @@ public class Discipline extends AggregateRoot<Discipline, DisciplineID> {
         this.validate(notification);
 
         if(notification.hasError()){
-            throw new NotificationException("", notification);
+            throw new NotificationException("Discipline has error", notification);
         }
     }
 
