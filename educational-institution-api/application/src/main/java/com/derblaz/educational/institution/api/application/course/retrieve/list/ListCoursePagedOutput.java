@@ -2,18 +2,18 @@ package com.derblaz.educational.institution.api.application.course.retrieve.list
 
 import com.derblaz.educational.institution.api.domain.course.Course;
 import com.derblaz.educational.institution.api.domain.course.CourseID;
-import com.derblaz.educational.institution.api.domain.discipline.DisciplineID;
+import com.derblaz.educational.institution.api.domain.discipline.Discipline;
 
 import java.time.Instant;
 import java.util.List;
 
 public record ListCoursePagedOutput(
-        CourseID courseID,
+        CourseID id,
         String name,
         String description,
         int monthsDuration,
         int places,
-        List<List<DisciplineID>> semesters,
+        List<List<Discipline>> semesters,
         boolean active,
         Instant createdAt,
         Instant updatedAt,

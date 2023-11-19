@@ -4,12 +4,12 @@ import com.derblaz.educational.institution.api.application.UseCase;
 import com.derblaz.educational.institution.api.domain.course.Course;
 import com.derblaz.educational.institution.api.domain.course.CourseGateway;
 import com.derblaz.educational.institution.api.domain.course.CourseID;
+import com.derblaz.educational.institution.api.domain.discipline.Discipline;
 import com.derblaz.educational.institution.api.domain.discipline.DisciplineGateway;
 import com.derblaz.educational.institution.api.domain.discipline.DisciplineID;
 import com.derblaz.educational.institution.api.domain.exceptions.NotFoundException;
 import com.derblaz.educational.institution.api.domain.exceptions.NotificationException;
 import com.derblaz.educational.institution.api.domain.validation.Error;
-import com.derblaz.educational.institution.api.domain.validation.ValidationHandler;
 import com.derblaz.educational.institution.api.domain.validation.handler.Notification;
 
 import java.util.ArrayList;
@@ -30,50 +30,53 @@ public class UpdateCourseUseCase implements UseCase<UpdateCourseCommand, UpdateC
     @Override
     public UpdateCourseOutput execute(UpdateCourseCommand aCommand) {
         final var courseID = CourseID.from(aCommand.id());
-        final var semesters = toSemesters(aCommand.semesters());
+        final var semestersIds = toSemesters(aCommand.semesters());
 
         var aCourse = courseGateway.findById(courseID)
                 .orElseThrow(() -> NotFoundException.with(Course.class, courseID));
-        
-        
+
+        final var disciplineIDS = semestersIds.stream()
+                .flatMap(List::stream)
+                .toList();
+
+        final var disciplines = disciplineGateway.existsByIds(disciplineIDS);
+
         final var notification = Notification.create();
-        notification.append(validateDisciplines(semesters));
+        if(disciplineIDS.size() != disciplines.size()){
+            final var missingDiscipines = new ArrayList<>(disciplineIDS);
+            missingDiscipines.removeAll(disciplines.stream().map(Discipline::getId).toList());
+            final var message = missingDiscipines.stream().map(DisciplineID::getValue)
+                    .collect(Collectors.joining(", "));
+
+            notification.append(Error.withMessage("Some disciplines could not be found: %s".formatted(message)));
+        }
         final var course = notification.validate(() -> aCourse.update(
                 aCommand.name(),
                 aCommand.description(),
                 aCommand.monthsDuration(),
                 aCommand.places(),
                 aCommand.active(),
-                semesters
+                toSemestersDisciplines(semestersIds, disciplines)
         ));
 
         if(notification.hasError())
             throw new NotificationException("Could not update Course", notification);
 
-        return UpdateCourseOutput.from(course);
+        return UpdateCourseOutput.from(courseGateway.update(course));
     }
 
-    private ValidationHandler validateDisciplines(List<List<DisciplineID>> semesters) {
-        final var notification = Notification.create();
-        if(Objects.isNull(semesters) || semesters.isEmpty())
-            return notification;
+    private List<List<Discipline>> toSemestersDisciplines(List<List<DisciplineID>> semesters, List<Discipline> disciplines) {
+        final var semestersDiscipline = new ArrayList<List<Discipline>>();
 
-        final var disciplines = semesters.stream()
-                .flatMap(List::stream)
-                .toList();
-
-        final var retrievedIds = disciplineGateway.existsByIds(disciplines);
-        if(disciplines.size() != retrievedIds.size()){
-            final var missingDiscipines = new ArrayList<>(disciplines);
-                    missingDiscipines.removeAll(retrievedIds);
-            final var message = missingDiscipines.stream().map(DisciplineID::getValue)
-                    .collect(Collectors.joining(", "));
-
-            notification.append(Error.withMessage("Some disciplines could not be found: %s".formatted(message)));
-
+        for (int i = 0; i < semesters.size(); i++) {
+            final var semesterIndex = i;
+            final var disciplineFinded = disciplines.stream()
+                    .filter(discipline -> semesters.get(semesterIndex).contains(discipline.getId()))
+                    .toList();
+            semestersDiscipline.add(disciplineFinded);
         }
 
-        return notification;
+        return  semestersDiscipline;
     }
 
     private List<List<DisciplineID>> toSemesters(List<List<String>> semesters) {

@@ -1,13 +1,16 @@
 package com.derblaz.educational.institution.api.domain.course;
 
 import com.derblaz.educational.institution.api.domain.AggregateRoot;
-import com.derblaz.educational.institution.api.domain.discipline.DisciplineID;
+import com.derblaz.educational.institution.api.domain.discipline.Discipline;
 import com.derblaz.educational.institution.api.domain.exceptions.NotificationException;
 import com.derblaz.educational.institution.api.domain.validation.ValidationHandler;
 import com.derblaz.educational.institution.api.domain.validation.handler.Notification;
 
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 
 public class Course extends AggregateRoot<Course, CourseID> {
@@ -16,14 +19,14 @@ public class Course extends AggregateRoot<Course, CourseID> {
     private String description;
     private int monthsDuration;
     private int places;
-    private List<List<DisciplineID>> semesters;
+    private List<List<Discipline>> semesters;
 
     private Course(CourseID courseID,
                   String name,
                   String description,
                   int monthsDuration,
                   int places,
-                  List<List<DisciplineID>> semesters,
+                  List<List<Discipline>> semesters,
                   boolean active,
                   Instant createdAt,
                   Instant updatedAt,
@@ -64,7 +67,7 @@ public class Course extends AggregateRoot<Course, CourseID> {
             String description,
             int monthsDuration,
             int places,
-            List<List<DisciplineID>> semesters,
+            List<List<Discipline>> semesters,
             boolean active,
             Instant createdAt,
             Instant updatedAt,
@@ -90,7 +93,7 @@ public class Course extends AggregateRoot<Course, CourseID> {
             int monthsDuration,
             int places,
             boolean isActive,
-            List<List<DisciplineID>> semesters
+            List<List<Discipline>> semesters
     ){
         if(isActive){
             activate();
@@ -106,7 +109,7 @@ public class Course extends AggregateRoot<Course, CourseID> {
         return this;
     }
 
-    public Course addSemesters(List<List<DisciplineID>> semesters){
+    public Course addSemesters(List<List<Discipline>> semesters){
         if(Objects.isNull(semesters) || semesters.isEmpty()){
             return this;
         }
@@ -118,7 +121,7 @@ public class Course extends AggregateRoot<Course, CourseID> {
         return this;
     }
 
-    public Course addDiscipline(int semesterIndex, DisciplineID disciplineID){
+    public Course addDiscipline(int semesterIndex, Discipline disciplineID){
         if (semesterIndex < 0 || disciplineID == null){
             return this;
         }
@@ -131,24 +134,24 @@ public class Course extends AggregateRoot<Course, CourseID> {
         return this;
     }
 
-    public Course addDisciplines(int semesterIndex, List<DisciplineID> disciplineIDS){
-        if (Objects.isNull(disciplineIDS) || disciplineIDS.isEmpty()){
+    public Course addDisciplines(int semesterIndex, List<Discipline> disciplines){
+        if (Objects.isNull(disciplines) || disciplines.isEmpty()){
             return this;
         }
 
         if(hasIndex(semesterIndex)){
-            semesters.get(semesterIndex).addAll(disciplineIDS);
+            semesters.get(semesterIndex).addAll(disciplines);
         } else {
-            semesters.add(new ArrayList<>(disciplineIDS));
+            semesters.add(new ArrayList<>(disciplines));
         }
         return this;
     }
 
-    public Course removeDisclipline(int semesterIndex, DisciplineID disciplineID){
-        if(semesterIndex < 0 || disciplineID == null){
+    public Course removeDisclipline(int semesterIndex, Discipline discipline){
+        if(semesterIndex < 0 || discipline == null){
             return this;
         }
-        if(hasIndex(semesterIndex)) semesters.get(semesterIndex).remove(disciplineID);
+        if(hasIndex(semesterIndex)) semesters.get(semesterIndex).remove(discipline);
         return this;
     }
 
@@ -185,7 +188,7 @@ public class Course extends AggregateRoot<Course, CourseID> {
         return monthsDuration;
     }
 
-    public List<List<DisciplineID>> getSemesters() {
+    public List<List<Discipline>> getSemesters() {
         return semesters;
     }
 }

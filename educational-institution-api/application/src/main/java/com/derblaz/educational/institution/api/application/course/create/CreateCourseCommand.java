@@ -2,7 +2,7 @@ package com.derblaz.educational.institution.api.application.course.create;
 
 import java.util.List;
 
-public record CreareCourseCommand(
+public record CreateCourseCommand(
         String name,
         String description,
         int monthsDuration,

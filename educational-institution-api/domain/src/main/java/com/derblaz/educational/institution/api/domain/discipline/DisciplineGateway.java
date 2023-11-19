@@ -8,5 +8,6 @@ public interface DisciplineGateway extends Gateway<Discipline, DisciplineID> {
 
     List<Discipline> findByNameAndActive(String term, int limit);
 
-    List<DisciplineID> existsByIds(Iterable<DisciplineID> categoryIDS);
+    List<Discipline> existsByIds(Iterable<DisciplineID> categoryIDS);
+
 }
