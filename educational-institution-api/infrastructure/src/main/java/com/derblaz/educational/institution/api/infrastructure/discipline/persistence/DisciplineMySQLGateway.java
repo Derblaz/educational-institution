@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
-import static com.derblaz.educational.institution.api.infrastructure.utils.SpecificationUtils.*;
+import static com.derblaz.educational.institution.api.infrastructure.utils.SpecificationUtils.active;
 
 @Service
 public class DisciplineMySQLGateway implements DisciplineGateway {
@@ -87,6 +88,17 @@ public class DisciplineMySQLGateway implements DisciplineGateway {
 
         return this.disciplineRepository
                 .findAll(Specification.where(specifications), pageable)
+                .map(DisciplineJpaEntity::toAggregate)
+                .toList();
+    }
+
+    @Override
+    public List<Discipline> existsByIds(Iterable<DisciplineID> categoryIDS) {
+        final var ids = StreamSupport.stream(categoryIDS.spliterator(), false)
+                .map(DisciplineID::getValue)
+                .toList();
+
+        return disciplineRepository.findByIdIn(ids).stream()
                 .map(DisciplineJpaEntity::toAggregate)
                 .toList();
     }
