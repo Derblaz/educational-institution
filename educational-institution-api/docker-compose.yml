@@ -1,6 +1,25 @@
 version: '3.7'
 
 services:
+  api:
+    container_name: educational_institution_api
+    build: .
+    restart: always
+    environment:
+      DATABASE_URL: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: educational_institution
+      DATABASE_USER: root
+      DATABASE_PASS: 123456
+      FLYWAY_DB: jdbc:mysql://mysql:3306/educational_institution
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    networks:
+      - educational_institution_services
+
+
   mysql:
     container_name: educational_institution_mysql
     image: mysql:latest
