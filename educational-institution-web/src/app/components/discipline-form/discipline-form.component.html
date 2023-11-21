@@ -1,0 +1,56 @@
+<div class="formgrid grid">
+  <div class="field col-12 md:col-6">
+    <label for="name">Nome</label>
+    <input
+      id="name"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="discipline.name"
+    />
+  </div>
+  <div class="field col-12 md:col-6">
+    <label for="duration">Créditos</label>
+    <input
+      id="duration"
+      type="number"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="discipline.credits"
+    />
+  </div>
+  <div class="field col-12 md:col-12">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="discipline.description"
+    >
+    </textarea>
+  </div>
+  <div class="field col-12 md:col-12">
+    <label for="program">Programação</label>
+    <textarea
+      id="program"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="discipline.program"
+    >
+    </textarea>
+  </div>
+
+  <div class="surface-border border-top-1 opacity-50 my-2 col-12"></div>
+</div>
+<div class="flex justify-content-end">
+  <button
+    pButton
+    label="Cancelar"
+    class="p-element p-ripple w-auto p-button-secondary p-component mr-2"
+    (click)="cancel()"
+  ></button>
+  <button
+    pButton
+    label="Salvar"
+    class="p-element p-ripple w-auto p-button p-component"
+    (click)="save()"
+  ></button>
+</div>

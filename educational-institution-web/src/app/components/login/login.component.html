@@ -10,9 +10,27 @@
       >
         Administrador
       </button>
-      <button pButton class="mb-2 justify-content-center">Coordenador</button>
-      <button pButton class="mb-2 justify-content-center">Professor</button>
-      <button pButton class="justify-content-center">Aluno</button>
+      <button
+        pButton
+        class="mb-2 justify-content-center"
+        (click)="navigateToCoordinator()"
+      >
+        Coordenador
+      </button>
+      <button
+        pButton
+        class="mb-2 justify-content-center"
+        (click)="navigateToTeacher()"
+      >
+        Professor
+      </button>
+      <button
+        pButton
+        class="justify-content-center"
+        (click)="navigateToStudent()"
+      >
+        Aluno
+      </button>
     </div>
   </div>
 </div>

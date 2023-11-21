@@ -10,6 +10,19 @@ export interface User {
   deletedAt?: string | null;
 }
 
+export interface Discipline {
+  id?: { value: string };
+  name?: string;
+  credits?: number;
+  description?: string;
+  program?: string;
+  presential?: boolean;
+  isActive?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+  deletedAt?: string | null;
+}
+
 export interface Search {
   search?: string;
   page?: number;
@@ -23,4 +36,17 @@ export interface Pagination<T> {
   perPage: number;
   total: number;
   items: T[];
+}
+
+export interface Course {
+  id?: { value: string };
+  name?: string;
+  description?: string;
+  monthsDuration?: number;
+  places?: number;
+  semesters?: Discipline[][];
+  isActive?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+  deletedAt?: string | null;
 }

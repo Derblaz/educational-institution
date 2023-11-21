@@ -1,0 +1,99 @@
+<div class="formgrid grid">
+  <div class="field col-12 md:col-6">
+    <label for="name">Nome</label>
+    <input
+      id="name"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="course.name"
+    />
+  </div>
+  <div class="field col-12 md:col-3">
+    <label for="duration">Duração</label>
+    <input
+      id="duration"
+      type="number"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="course.monthsDuration"
+    />
+  </div>
+  <div class="field col-12 md:col-3">
+    <label for="places">Vagas</label>
+    <input
+      id="places"
+      type="number"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="course.places"
+    />
+  </div>
+  <div class="field col-12 md:col-12">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      [(ngModel)]="course.description"
+    >
+    </textarea>
+  </div>
+  <h4 class="col-12">Semestres</h4>
+
+  <div class="col-12" *ngFor="let semester of course.semesters; index as i">
+    <div class="field col-12 flex flex-row gap-4">
+      <h5 class="w-6rem my-2">Semestre {{ i + 1 }}</h5>
+      <p-autoComplete
+        inputStyleClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+        #discipline
+        [suggestions]="filteredDiscipline"
+        (completeMethod)="filterCourse($event)"
+        placeholder="Escolha uma disciplina"
+        field="name"
+      >
+      </p-autoComplete>
+      <p-button
+        label="Success"
+        severity="success"
+        (click)="addDiscipline(i, discipline.value)"
+        label="Adicionar"
+        size="small"
+      ></p-button>
+    </div>
+    <div
+      class="col-12 col-offset-1 mb-3"
+      *ngFor="let discipline of semester; index as indexDiscipline"
+    >
+      <div class="col-10 flex flex-row gap-4 align-items-center">
+        <div>{{ discipline.name }}</div>
+        <button
+          class="p-button p-button-icon-only p-button-danger p-button-rounded p-button-text"
+          type="button"
+          (click)="deleteDiscipline(i, indexDiscipline)"
+        >
+          <span class="pi pi-times p-button-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 flex justify-content-end mt-4">
+    <button class="p-button p-button-text" (click)="addSemester()">
+      Adicionar Semestre
+    </button>
+  </div>
+
+  <div class="surface-border border-top-1 opacity-50 my-2 col-12"></div>
+</div>
+<div class="flex justify-content-end">
+  <button
+    pButton
+    label="Cancelar"
+    class="p-element p-ripple w-auto p-button-secondary p-component mr-2"
+    (click)="cancel()"
+  ></button>
+  <button
+    pButton
+    label="Salvar"
+    class="p-element p-ripple w-auto p-button p-component"
+    (click)="save()"
+  ></button>
+</div>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Pagination, Search, User } from '../models';
+import { env } from '../env';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private base_url = 'http://localhost:8080/api/users';
+  private base_url = env.apiUrl + '/users';
 
   constructor(private http: HttpClient) {}
 

@@ -1,0 +1,44 @@
+<p-button
+  [ngStyle]="{ right: '2rem', top: '2rem' }"
+  class="fixed"
+  type="button"
+  icon="pi pi-sign-out"
+  routerLink="/"
+></p-button>
+<div class="flex flex-column align-items-center p-5">
+  <div class="w-9">
+    <div class="mb-3 pl-3">
+      <h1>Coodenador</h1>
+    </div>
+    <div class="mb-2">
+      <button
+        pButton
+        label="Curso"
+        class="p-element p-ripple w-auto p-button-secondary p-component mr-2"
+        (click)="toPage('CURSO')"
+      ></button>
+      <button
+        pButton
+        label="Disciplina"
+        class="p-element p-ripple w-auto p-button-secondary p-component mr-2"
+        (click)="toPage('DISCIPLINA')"
+      ></button>
+    </div>
+
+    <div *ngIf="page === 'CURSO'" class="flex flex-column gap-4">
+      <course-list
+        [editable]="true"
+        (newEvent)="newCourseHandler()"
+        (editEvent)="editCourseHandler($event)"
+      ></course-list>
+    </div>
+
+    <div *ngIf="page === 'DISCIPLINA'" class="flex flex-column gap-4">
+      <discipline-list
+        [editable]="true"
+        (newEvent)="newDisciplineHandler()"
+        (editEvent)="editDisciplineHandler($event)"
+      ></discipline-list>
+    </div>
+  </div>
+</div>

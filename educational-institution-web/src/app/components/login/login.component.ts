@@ -12,4 +12,16 @@ export class LoginComponent {
   navigateToAdministrator() {
     this.router.navigate(['/administrator']);
   }
+
+  navigateToCoordinator() {
+    this.router.navigate(['/coordinator']);
+  }
+
+  navigateToTeacher() {
+    this.router.navigate(['/teacher']);
+  }
+
+  navigateToStudent() {
+    this.router.navigate(['/student']);
+  }
 }

@@ -1,0 +1,46 @@
+<p-button
+  [ngStyle]="{ right: '2rem', top: '2rem' }"
+  class="fixed"
+  type="button"
+  icon="pi pi-sign-out"
+  routerLink="/"
+></p-button>
+<div class="flex flex-column align-items-center p-5">
+  <div class="w-9">
+    <div class="mb-3 pl-3">
+      <h1>Aluno</h1>
+    </div>
+    <div class="mb-4">
+      <p-autoComplete
+        [(ngModel)]="selectedCourse"
+        (ngModelChange)="eventPrint()"
+        [suggestions]="filteredCourses"
+        (completeMethod)="filterCourse($event)"
+        placeholder="Escolha um curso"
+        field="name"
+      >
+      </p-autoComplete>
+    </div>
+    <div *ngIf="selectedCourse && selectedCourse.name">
+      <p-panel [header]="selectedCourse.name">
+        <div class="flex flex-row gap-4 -mt-4">
+          <div>
+            <h4>Vagas</h4>
+            <p>{{ selectedCourse.places }}</p>
+          </div>
+          <div>
+            <h4>Duração</h4>
+            <p>{{ selectedCourse.monthsDuration }}</p>
+          </div>
+        </div>
+        <p>{{ selectedCourse.description }}</p>
+      </p-panel>
+      <div class="flex flex-column gap-4 mt-4">
+        <div *ngFor="let semester of selectedCourse.semesters; index as i">
+          <h3>Semestre {{ i + 1 }}</h3>
+          <discipline-list [course]="semester"></discipline-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
